@@ -67,7 +67,6 @@ span{
 }
 
 
-/* Define keyframes for the underline animation */
 @keyframes underline {
     0% {
       width: 0;
@@ -77,7 +76,6 @@ span{
     }
   }
   
-  /* Apply the animation to an element */
   .navbar a {
     position: relative;
   }
@@ -88,15 +86,13 @@ span{
     bottom: 0;
     left: 0;
     width: 0;
-    height: 2px; /* Adjust thickness of the underline */
-    background-color: #ffa343; /* Adjust color of the underline */
-    transition: width 0.3s ease; /* Add smooth transition effect */
+    height: 2px; 
+    background-color: #ffa343;
+    transition: width 0.3s ease; 
   }
   
-  /* Add hover effect to trigger the animation */
   .navbar a:hover::after {
-    animation: underline 0.7s forwards; /* Apply the underline animation */
-  }
+    animation: underline 0.7s forwards; }
   
 
 
