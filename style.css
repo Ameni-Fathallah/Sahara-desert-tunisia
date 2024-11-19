@@ -10,23 +10,11 @@
     font-family: 'Open Sans', sans-serif;
  
 }
-
-
-
-
-
-
-
-
-
-
-
-
 :root{
      --text-color:#fff;
     --bg-color: #000;
     --main-color:#ffa343;
-    --h1-font:6rem;
+    --h1-font:5rem;
     --h2-font:3rem;
     --p-font:1rem;   
 }
@@ -46,6 +34,8 @@ header{
     align-items: center;
     justify-content: space-between;
     transition:all .50s ease;
+    backdrop-filter: blur(10px); 
+    background-color: rgba(0, 0, 0, 0.5); 
 }
 
 .logo{
@@ -143,8 +133,7 @@ section{
 
 .home{
     position: relative;
-    height: 100vh;
-    width:100%;
+    height:100vh;
     background-image: linear-gradient(to left,rgba(0,0,0,0.6),rgba(0,0,0,0.3)),url(img/thumb_15952686_cover_header.jpg);
     background-size: cover;
     background-position: bottom center;
@@ -456,26 +445,38 @@ header.sticky{
 
 @media(max-width:1700px){
     header{
-        padding: 18px 8%;
+        padding: 20px 8%;
     }
     header.sticky{
-    padding: 7px 8%;
+    padding: 50px 8%;
     }
     section{
-        padding: 50px 8% 40px;
+        padding: 90px 8% 40px;
     }
 }
 
 @media(max-width:1200px){
 
-    header{
+    header {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        z-index: 1;
         padding: 14px 5%;
+        backdrop-filter: blur(10px); 
+        background-color: rgba(0, 0, 0, 0.5); 
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: all 0.5s ease;
     }
+    
     header.sticky{
        padding: 7px 5%;
     }
     section{
-        padding: 45px 5% 35px;
+        padding: 10px 5% 35px;
     }
     :root{
         --h1-font:4.6rem;
@@ -483,11 +484,13 @@ header.sticky{
         --p-font:15px;
     }
     .home{
-        height: 100vh;   /*90%*/
+        height: 100vh; 
     }
   
 } 
-
+.navbar.open {
+    left: 0;
+}
 @media(max-width:1050px){
     .feature-content{
         gap:0.5rem;
@@ -508,15 +511,17 @@ header.sticky{
         height: 100vh;
         top:0;
         bottom:0;
-        left: 100%;
-         right: 0;
+        left:100%;
+        right: 0;
         display: flex;
         flex-direction: column;
-        background:var(--bg-color);
+        backdrop-filter: blur(10px); 
+        background-color: rgba(0, 0, 0, 0.9); 
         transition:all .50s ease;
+
     }
     .navbar a{
-        display: block;
+        display: flex;
         color: #979797;
         padding: 0;
         margin: 0px 0px 40px 0px;
@@ -532,7 +537,7 @@ header.sticky{
 }
 @media (max-width: 870px) {
     .feature-content {
-        grid-auto-flow: column; /* Disposition en colonne */
+        grid-auto-flow: column; /* Disposition in colomns */
     }
 }
     @media (max-width: 800px) {
@@ -550,64 +555,21 @@ header.sticky{
         }}
         @media (max-width: 700px) {
             .tour-content {
-                grid-template-columns: 1fr; /* Définir une seule colonne */
+                grid-template-columns: 1fr; /* define 1 column */
             }
         }
         
 
 @media(max-width:600px){
     :root{
-      --h1-font:4.6rem;
-      --h2-font:2.8rem;
+      --h1-font:3rem;
+      --h2-font:2.1rem;
             
         }
-    .home{
-        height: 85vh;
-    }
-   
- 
 }
-
-
 @media(max-width:450px){
-    header{
-        padding: 12px 3%;
-    }
-    header.sticky{
-       padding: 7px 3%;
-    }
-    section{
-        padding: 100px 3% 50px;
-    }
-   
-/* Adjust the navbar styles for smaller screens */
-.navbar.onclick {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%; /* Adjust the width as needed */
-    height: 100%;
-    background-color: rgba(0, 0, 0, 1);
-    z-index: 9999;
-    transition: left 0.3s ease; /* Add transition for smooth animation */
-}
-
-/* Add styles for navbar links */
-.navbar a {
-    display: block;
-    color: #979797;
-    padding: 0;
-    margin: 0px 0px 40px 0px;
-    font-weight: 400;
-    font-size: 2.2rem;
-    font-size: 15px;
-    transition: all .5s ease; /* Add transition for smooth animation */
-}
-
-/* Adjust the position of the navbar when opened */
+    
 .navbar.open {
     left: 0;
 }
-
-
 }
